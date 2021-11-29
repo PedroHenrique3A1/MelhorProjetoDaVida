@@ -1,0 +1,31 @@
+CREATE DATABASE projeto_banco;
+
+USE projeto_banco;
+
+CREATE TABLE tbl_dados(
+	ID INT NOT NULL AUTO_INCREMENT,
+	PHCFN VARCHAR(25) NOT NULL,
+	P08 INT NOT NULL,
+	N19 INT NOT NULL,
+PRIMARY KEY(ID)
+)ENGINE=INNODB;
+
+CREATE TABLE tbl_usuario(
+	ID INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(50),
+	telefone CHAR(10), -- 90000-0000
+	rua VARCHAR(55),
+	numero INT,
+	bairro VARCHAR(55),
+	cidade VARCHAR(30),
+	estado CHAR(2),
+	CPF CHAR(14) NOT NULL, -- 000.000.000-00
+	RG CHAR(13), -- MG-00.000.000
+	data_nascimento DATE,
+	pais VARCHAR(30),
+	email VARCHAR(80) NOT NULL,
+	senha VARCHAR(20) NOT NULL,
+PRIMARY KEY(ID)
+)ENGINE=INNODB;
+
+INSERT INTO tbl_usuario(ID,CPF,email,senha) VALUES(NULL,'000.000.000-00','pedro@pedro.com','123');
